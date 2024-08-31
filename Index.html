@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes Adolescentes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Estilos para o cabeçalho */
+        header {
+            background-color: #ff0000; /* Vermelho */
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Estilos para o menu hambúrguer */
+        .menu-hamburguer {
+            display: none;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            cursor: pointer;
+        }
+
+        .menu-hamburguer div {
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            margin: 6px 0;
+        }
+
+        .menu-hamburguer-content {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: #ff0000;
+            width: 150px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .menu-hamburguer-content a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .menu-hamburguer-content a:hover {
+            background-color: #cc0000;
+        }
+
+        /* Estilos para o menu cascata */
+        nav {
+            background-color: #0000ff; /* Azul */
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        nav ul li a:hover {
+            background-color: #0000cc;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0000ff;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul li {
+            margin: 0;
+        }
+
+        /* Estilos para o conteúdo principal */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            color: #333;
+        }
+
+        .movie-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .movie-gallery img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Estilos para o rodapé */
+        footer {
+            background-color: #ff0000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .menu-hamburguer {
+                display: block;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .menu-hamburguer-content.show {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Filmes Adolescentes</h1>
+        <div class="menu-hamburguer" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu-hamburguer-content">
+            <a href="#">Início</a>
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Filmes</a>
+                <ul>
+                    <li><a href="#">Comédia</a></li>
+                    <li><a href="#">Aventura</a></li>
+                    <li><a href="#">Drama</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h2>Bem-vindo ao Mundo dos Filmes Adolescentes!</h2>
+        <p>Aqui você encontra uma seleção incrível de filmes voltados para o público jovem.</p>
+        <div class="movie-gallery">
+            <img src="images.jpeg" alt="Filme 1">
+            <img src="imagem 2.jpeg" alt="Filme 2">
+            <img src="101764.jpg" alt="Filme 3">
+            <img src="71CktslM6fL._AC_UF1000,1000_QL80_.jpg" alt="Filme 4">
+            <img src="81Q11TuUR3L._AC_UF1000,1000_QL80_.jpg" alt="Filme 5">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 - Brenda Eduarda</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu-hamburguer-content');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
